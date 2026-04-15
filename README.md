@@ -8,7 +8,7 @@ Sistemi lejon lidhjen e disa klientëve me serverin, ekzekutimin e komandave pë
 
 ---
 
-## ⚙️ Teknologjitë e përdorura
+##  Teknologjitë e përdorura
 
 - Node.js
 - UDP (moduli dgram)
@@ -50,7 +50,7 @@ Sistemi përdor dy lloje përdoruesish:
 
 ##  Si të ekzekutohet projekti
 
-### 1️⃣ Instalimi i dependencies
+### Instalimi i dependencies
 ```bash
 npm install
 ```
@@ -65,9 +65,9 @@ node server/index.js
 node client/index.js
 ```
 Pas startimit te serverit hap browser-in dhe shko te:
-```bash
+
 http://localhost:8080/stats
-```
+
 Do shfaqet JSON me statistika në kohë reale.
 Ky endpoint kthen të dhëna në format JSON si:
 - numri i klientëve aktivë
@@ -75,8 +75,9 @@ Ky endpoint kthen të dhëna në format JSON si:
 - numri i mesazheve
 - mesazhet e fundit
 - koha aktuale e serverit
+  
 ## Struktura e projektit
-
+```
 Programming-with-sockets/
 │
 ├── server/
@@ -97,3 +98,4 @@ Programming-with-sockets/
 │
 ├── package.json
 └── README.md
+```
