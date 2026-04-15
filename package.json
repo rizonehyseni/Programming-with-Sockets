@@ -1,0 +1,15 @@
+{
+  "name": "Programming-with-Sockets",
+  "version": "1.0.0",
+  "description": "Projekt Rrjetat Kompjuterike - Server UDP",
+  "main": "server/index.js",
+  "scripts": {
+    "start:server": "node server/index.js",
+    "start:client": "node client/index.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2"
+  },
+  "author": "Group Project",
+  "license": "ISC"
+}
