@@ -58,6 +58,26 @@ function prompt() {
     if (['read', 'info', 'delete', 'download'].includes(cmd)) {
       message.filename = parts[1];
     }
-    if (cmd === 'search') message.keyword = parts[1]; });
+    if (cmd === 'search') message.keyword = parts[1]; 
+
+    if (cmd === 'upload') {
+      const filename = parts[1];
+      if (!filename) {
+        console.log('Perdorimi: upload <emri_i_file>');
+        return prompt();
+      }
+      const filePath = path.join(process.cwd(), filename);
+      if (!fs.existsSync(filePath)) {
+        console.log('File nuk u gjet ne kompjuterin tuaj');
+        return prompt();
+      }
+      const buffer = fs.readFileSync(filePath);
+      message.filename = filename;
+      message.data = buffer.toString('base64');
+      console.log('Duke u ngarkuar file...');
+    }
+
+    send(message);
+  });
 }
   
