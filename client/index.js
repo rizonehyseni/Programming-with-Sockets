@@ -80,4 +80,11 @@ function prompt() {
     send(message);
   });
 }
+
+
+client.bind(() => {
+  console.log(`Klienti u lidh me serverin ${SERVER_IP}:${SERVER_PORT}`);
+  console.log('Per te bere admin shkruaj: LOGIN secret123');
+  prompt();
+});
   
