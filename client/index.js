@@ -41,3 +41,23 @@ client.on('message', (msg, rinfo) => {
   }
   prompt();
 });
+
+
+function prompt() {
+  rl.question('\n> ', (input) => {
+    const parts = input.trim().split(/\s+/);
+    const cmd = parts[0].toLowerCase();
+
+    if (cmd === 'login') {
+      send({ type: 'login', password: parts[1] });
+      return;
+    }
+
+    const message = { type: 'command', command: cmd };
+
+    if (['read', 'info', 'delete', 'download'].includes(cmd)) {
+      message.filename = parts[1];
+    }
+    if (cmd === 'search') message.keyword = parts[1]; });
+}
+  
