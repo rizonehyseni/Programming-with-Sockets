@@ -48,4 +48,10 @@ module.exports = {
         fs.writeFileSync(filePath, buffer);
         return true;
     },
+
+    downloadFile(filename) {
+        const filePath = path.join(filesDir, filename);
+        if (!fs.existsSync(filePath)) throw new Error('File nuk u gjet');
+        return fs.readFileSync(filePath).toString('base64');
+    }
 };
