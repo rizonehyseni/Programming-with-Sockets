@@ -77,7 +77,18 @@ checkTimeouts() {
       clients.delete(key);
     }
   }
-}
+},
+
+getActiveClients() {
+  return Array.from(clients.entries()).map(([key, data]) => ({
+    clientKey: key,
+    role: data.role,
+    isAdmin: key === currentAdminKey,
+    messageCount: data.messageCount
+  }));
+},
+
+
 
 
 
