@@ -61,7 +61,13 @@ incrementMessage(key, msg) {
     });
     if (messagesLog.length > 50) messagesLog.shift();
   }
-}
+},
+
+getResponseDelay(key) {
+  return this.isAdmin(key) ? 50 : 300;
+},
+
+
 
 
 
