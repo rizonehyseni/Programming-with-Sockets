@@ -30,6 +30,8 @@ trySetAdmin(key) {
   if (clients.has(key)) {
     clients.get(key).role = config.ADMIN_ROLE;
     currentAdminKey = key;
+    console.log(`Admini u caktua: ${key}`);
+
     return true;
   }
   return false;
