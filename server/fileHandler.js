@@ -37,4 +37,8 @@ module.exports = {
             modified: stats.mtime
     };
   },
+
+    searchFiles(keyword) {
+        return fs.readdirSync(filesDir).filter(file => file.toLowerCase().includes(keyword.toLowerCase()));
+    },
 };
