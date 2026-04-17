@@ -66,6 +66,18 @@ incrementMessage(key, msg) {
 getResponseDelay(key) {
   return this.isAdmin(key) ? 50 : 300;
 },
+checkTimeouts() {
+  const now = Date.now();
+
+  for (const [key, data] of clients.entries()) {
+    if (now - data.lastActive > config.CLIENT_TIMEOUT) {
+      console.log(`Klienti u mbyll per timeout: ${key}`);
+
+      this.removeAdminIfDisconnected(key);
+      clients.delete(key);
+    }
+  }
+}
 
 
 
