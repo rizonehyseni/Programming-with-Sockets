@@ -7,6 +7,10 @@ module.exports = {};
 module.exports = {
   addOrUpdateClient(rinfo) {
     const key = `${rinfo.address}:${rinfo.port}`;
+    if (clients.size >= config.MAX_CLIENTS && !clients.has(key)) {
+  return false;
+}
+
 
     if (!clients.has(key)) {
       clients.set(key, {
@@ -25,6 +29,7 @@ module.exports = {
 };
 
 
+//vendosja e limitit maksimal të klientëve
 
 
 
