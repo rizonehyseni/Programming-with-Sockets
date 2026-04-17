@@ -35,7 +35,11 @@ trySetAdmin(key) {
     return true;
   }
   return false;
-}
+},
+isAdmin(key) {
+  return key === currentAdminKey;
+},
+
 
 
 
