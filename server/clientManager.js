@@ -59,6 +59,7 @@ incrementMessage(key, msg) {
       message: msg,
       time: new Date().toISOString()
     });
+    if (messagesLog.length > 50) messagesLog.shift();
   }
 }
 
