@@ -15,7 +15,10 @@ module.exports = {
   messageCount: 0
 });
 
-    }
+    }else {
+  clients.get(key).lastActive = Date.now();
+}
+
 
     return true;
   }
