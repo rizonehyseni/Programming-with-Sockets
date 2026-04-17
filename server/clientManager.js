@@ -1,6 +1,7 @@
 const config = require('./config');
 
 const clients = new Map();
+let currentAdminKey = null;
 
 module.exports = {};
 
@@ -28,8 +29,6 @@ module.exports = {
   }
 };
 
-
-//vendosja e limitit maksimal të klientëve
 
 
 
