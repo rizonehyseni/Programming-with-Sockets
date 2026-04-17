@@ -1,6 +1,7 @@
 const config = require('./config');
 
 const clients = new Map();
+const messagesLog = [];
 let currentAdminKey = null;
 
 module.exports = {};
@@ -47,6 +48,18 @@ removeAdminIfDisconnected(key) {
 },
 updateActivity(key) {
   if (clients.has(key)) clients.get(key).lastActive = Date.now();
+},
+incrementMessage(key, msg) {
+  if (clients.has(key)) {
+    const c = clients.get(key);
+    c.messageCount++;
+
+    messagesLog.push({
+      clientKey: key,
+      message: msg,
+      time: new Date().toISOString()
+    });
+  }
 }
 
 
