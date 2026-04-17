@@ -41,4 +41,11 @@ module.exports = {
     searchFiles(keyword) {
         return fs.readdirSync(filesDir).filter(file => file.toLowerCase().includes(keyword.toLowerCase()));
     },
+
+    uploadFile(filename, base64Data) {
+        const filePath = path.join(filesDir, filename);
+        const buffer = Buffer.from(base64Data, 'base64');
+        fs.writeFileSync(filePath, buffer);
+        return true;
+    },
 };
