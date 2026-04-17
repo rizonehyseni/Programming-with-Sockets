@@ -87,9 +87,15 @@ getActiveClients() {
     messageCount: data.messageCount
   }));
 },
+getAllMessages() {
+  return messagesLog;
+},
 
+getClientCount() {
+  return clients.size;
+}
 
-
+};
 
 
 
