@@ -44,7 +44,11 @@ removeAdminIfDisconnected(key) {
     currentAdminKey = null;
     console.log(`Admini u largua automatikisht: ${key}`);
   }
+},
+updateActivity(key) {
+  if (clients.has(key)) clients.get(key).lastActive = Date.now();
 }
+
 
 
 
