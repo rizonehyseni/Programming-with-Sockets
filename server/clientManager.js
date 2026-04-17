@@ -39,6 +39,13 @@ trySetAdmin(key) {
 isAdmin(key) {
   return key === currentAdminKey;
 },
+removeAdminIfDisconnected(key) {
+  if (key === currentAdminKey) {
+    currentAdminKey = null;
+    console.log(`Admini u largua automatikisht: ${key}`);
+  }
+}
+
 
 
 
