@@ -11,23 +11,26 @@ module.exports = {
     if (clients.size >= config.MAX_CLIENTS && !clients.has(key)) {
   return false;
 }
-
-
     if (!clients.has(key)) {
       clients.set(key, {
   role: config.NORMAL_ROLE,
   lastActive: Date.now(),
   messageCount: 0
 });
-
-    }else {
+}else {
   clients.get(key).lastActive = Date.now();
 }
+    return true;
+  },
 
-
+trySetAdmin(key) {
+  if (clients.has(key)) {
+    clients.get(key).role = config.ADMIN_ROLE;
+    currentAdminKey = key;
     return true;
   }
-};
+  return false;
+}
 
 
 
