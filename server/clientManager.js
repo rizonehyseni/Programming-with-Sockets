@@ -24,6 +24,9 @@ module.exports = {
   },
 
 trySetAdmin(key) {
+  if (currentAdminKey && currentAdminKey !== key) {
+  return false;
+}
   if (clients.has(key)) {
     clients.get(key).role = config.ADMIN_ROLE;
     currentAdminKey = key;
