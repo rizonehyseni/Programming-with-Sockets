@@ -1,5 +1,5 @@
 {
-  "name": "Programming-with-Sockets",
+  "name": "programming-with-sockets",
   "version": "1.0.0",
   "description": "Projekt Rrjetat Kompjuterike - Server UDP",
   "main": "server/index.js",
