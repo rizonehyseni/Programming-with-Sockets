@@ -20,6 +20,18 @@ module.exports = {
         case "list":
           response.data = fileManager.listFiles();
           break;
+
+        case "read":
+          response.data = fileManager.readFile(msg.filename);
+          break;
+
+        case "search":
+          response.data = fileManager.searchFiles(msg.keyword);
+          break;
+
+        case "info":
+          response.data = fileManager.getFileInfo(msg.filename);
+          break;
       }
     } catch (err) {
       return {
