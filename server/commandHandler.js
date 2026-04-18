@@ -12,6 +12,10 @@ module.exports = {
 
     try {
       const cmd = msg.command.toLowerCase();
+
+      if (!isAdmin && ["upload", "delete"].includes(cmd)) {
+        throw new Error("Leje e mohuar. Vetem admini ka qasje te plote");
+      }
     } catch (err) {
       return {
         type: "response",
