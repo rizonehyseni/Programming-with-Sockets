@@ -16,6 +16,8 @@ module.exports = {
       if (!isAdmin && ["upload", "delete"].includes(cmd)) {
         throw new Error("Leje e mohuar. Vetem admini ka qasje te plote");
       }
+      switch (cmd) {
+      }
     } catch (err) {
       return {
         type: "response",
