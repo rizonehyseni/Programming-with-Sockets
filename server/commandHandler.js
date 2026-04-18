@@ -1,17 +1,23 @@
-const fileManager = require('./fileManager');
-const clientManager = require('./clientManager');
+const fileManager = require("./fileManager");
+const clientManager = require("./clientManager");
 
 module.exports = {
   handle(msg, clientKey) {
     const isAdmin = clientManager.isAdmin(clientKey);
-    const response = { 
-       type: 'response', 
-       status: 'ok',
-       isAdmin: isAdmin 
+    const response = {
+      type: "response",
+      status: "ok",
+      isAdmin: isAdmin,
+    };
+
+    try {
+    } catch (err) {
+      return {
+        type: "response",
+        status: "error",
+        message: err.message,
+        isAdmin: isAdmin,
+      };
+    }
+  },
 };
-  
-
-  }
-};
-
-
