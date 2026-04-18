@@ -40,6 +40,14 @@ module.exports = {
           fileManager.uploadFile(msg.filename, msg.data);
           response.message = `File ${msg.filename} u ngarkua me sukses nga admini`;
           break;
+
+        case "download":
+          if (!msg.filename) {
+            throw new Error("Mungon emri i file");
+          }
+          const base64 = fileManager.downloadFile(msg.filename);
+          response.data = { filename: msg.filename, content: base64 };
+          break;
       }
     } catch (err) {
       return {
