@@ -22,13 +22,13 @@ Sistemi lejon lidhjen e disa klientëve me serverin, ekzekutimin e komandave pë
 
 Sistemi përbëhet nga:
 
-### 🖥️ Serveri
+###  Serveri
 - UDP server (komunikimi kryesor)
 - HTTP server për monitorim (`/stats`)
 - Menaxhimi i file-ve
 - Menaxhimi i klientëve (role, aktivitet, timeout)
 
-### 💻 Klienti
+###  Klienti
 - UDP socket klient
 - CLI (command-line interface)
 - Dërgon komanda në server
@@ -39,12 +39,12 @@ Sistemi përbëhet nga:
 
 Sistemi përdor dy lloje përdoruesish:
 
-### 🟢 Admin
+###  Admin
 - Ka qasje të plotë në server
 - Mund të përdorë: upload, download, delete, read, list, search, info
 - Vetëm 1 admin mund të ekzistojë në të njëjtën kohë
 
-### 🔵 User normal
+###  User normal
 - Ka vetëm lexim të file-ve
 - Mund të përdorë: list, read, search, info
 
