@@ -56,6 +56,7 @@ module.exports = {
         default:
           throw new Error("Komande e panjohur");
       }
+      return response;
     } catch (err) {
       return {
         type: "response",
