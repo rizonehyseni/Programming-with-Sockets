@@ -17,6 +17,9 @@ module.exports = {
         throw new Error("Leje e mohuar. Vetem admini ka qasje te plote");
       }
       switch (cmd) {
+        case "list":
+          response.data = fileManager.listFiles();
+          break;
       }
     } catch (err) {
       return {
