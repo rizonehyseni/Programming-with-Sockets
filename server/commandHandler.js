@@ -11,6 +11,7 @@ module.exports = {
     };
 
     try {
+      const cmd = msg.command.toLowerCase();
     } catch (err) {
       return {
         type: "response",
