@@ -32,6 +32,14 @@ module.exports = {
         case "info":
           response.data = fileManager.getFileInfo(msg.filename);
           break;
+
+        case "upload":
+          if (!msg.filename || !msg.data) {
+            throw new Error("Mungon emri i file ose te dhenat");
+          }
+          fileManager.uploadFile(msg.filename, msg.data);
+          response.message = `File ${msg.filename} u ngarkua me sukses nga admini`;
+          break;
       }
     } catch (err) {
       return {
