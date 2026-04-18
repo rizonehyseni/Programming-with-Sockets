@@ -48,6 +48,13 @@ module.exports = {
           const base64 = fileManager.downloadFile(msg.filename);
           response.data = { filename: msg.filename, content: base64 };
           break;
+        case "delete":
+          fileManager.deleteFile(msg.filename);
+          response.message = `File ${msg.filename} u fshi me sukses nga admini`;
+          break;
+
+        default:
+          throw new Error("Komande e panjohur");
       }
     } catch (err) {
       return {
