@@ -8,7 +8,6 @@ Serveri identifikon çdo klient përmes kombinimit të adresës IP dhe portit, d
 
 Sistemi mbështet disa komanda për manipulimin e file-ve, si listimi, leximi, kërkimi, shkarkimi, ngarkimi dhe fshirja e file-ve. Për të garantuar siguri dhe kontroll, është implementuar një sistem rolesh ku vetëm një klient mund të ketë rolin e administratorit (admin), ndërsa klientët e tjerë kanë rol normal me privilegje të kufizuara. Operacionet kritike si upload dhe delete janë të lejuara vetëm për adminin.
 
-Përveç funksionaliteteve bazë, sistemi përfshin edhe mekanizma për monitorimin e aktivitetit, si regjistrimi i mesazheve dhe statistikat mbi klientët aktivë. 
 ---
 
 ##  Teknologjitë e përdorura
@@ -50,6 +49,19 @@ Sistemi përdor dy lloje përdoruesish:
 ###  User normal
 - Ka vetëm lexim të file-ve
 - Mund të përdorë: list, read, search, info
+
+## Tabela e komandave
+
+  Komanda     Përshkrimi                Akses
+------------------------------------------------
+list        Liston file-t             Vetëm Admin
+read        Lexon një file            Të gjithë
+search      Kërkon file               Vetëm admin
+upload      Ngarkon file              Vetëm admin
+delete      Fshin file                Vetëm admin
+download    Shkarkon file             Vetëm admin
+info        Informata                 Vetëm admin
+
 
 ##  Si të ekzekutohet projekti
 
