@@ -10,6 +10,8 @@ module.exports = {
             status: "ok",
             lidhjetAktive: clientManager.getClientCount(),
             klientet: clientManager.getActiveClients(),
+            numriTotalMesazhesh: clientManager.getAllMessages().length,
+            mesazhetERfundit: clientManager.getAllMessages().slice(-10),
             koha: new Date().toISOString()
         };
         res.json(stats);
