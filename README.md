@@ -47,8 +47,7 @@ Sistemi përdor dy lloje përdoruesish:
 - Vetëm 1 admin mund të ekzistojë në të njëjtën kohë
 
 ###  User normal
-- Ka vetëm lexim të file-ve
-- Mund të përdorë: list, read, search, info
+- Ka vetëm lexim të file-ve (sipas kerkesave)
 
 ## Tabela e komandave
 ```
