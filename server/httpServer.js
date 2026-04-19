@@ -8,6 +8,8 @@ module.exports = {
     app.get('/stats', (req, res) => {
         const stats = {
             status: "ok",
+            lidhjetAktive: clientManager.getClientCount(),
+            klientet: clientManager.getActiveClients(),
             koha: new Date().toISOString()
         };
         res.json(stats);
