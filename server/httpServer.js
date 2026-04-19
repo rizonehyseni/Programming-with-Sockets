@@ -8,6 +8,10 @@ module.exports = {
     app.get('/stats', (req, res) => {
         const stats = {
             status: "ok",
+            delayInfo: {
+            admin: 50,
+            normal: 300
+            },
             lidhjetAktive: clientManager.getClientCount(),
             klientet: clientManager.getActiveClients(),
             numriTotalMesazhesh: clientManager.getAllMessages().length,
