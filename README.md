@@ -1,11 +1,14 @@
 # UDP File Server (Node.js)
 
-Ky projekt është zhvilluar për lëndën **Rrjetat Kompjuterike**.
+Ky projekt është zhvilluar në kuadër të lëndës Rrjetat Kompjuterike dhe ka për qëllim implementimin e një sistemi klient–server duke përdorur protokollin UDP.
 
-Ai implementon një sistem **klient–server duke përdorur protokollin UDP**, së bashku me një **server HTTP për monitorim**.
+Sistemi përbëhet nga një server UDP që menaxhon komunikimin me klientët dhe një server HTTP që përdoret për monitorimin dhe menaxhimin e gjendjes së sistemit në kohë reale. Përmes këtij sistemi, disa klientë mund të lidhen njëkohësisht me serverin dhe të dërgojnë kërkesa të ndryshme për operacione mbi file-t.
 
-Sistemi lejon lidhjen e disa klientëve me serverin, ekzekutimin e komandave për menaxhimin e file-ve dhe kontrollin e aksesit përmes roleve (admin dhe user normal).
+Serveri identifikon çdo klient përmes kombinimit të adresës IP dhe portit, duke ruajtur informacion mbi aktivitetin e tyre, si koha e fundit e komunikimit dhe numri i mesazheve të dërguara. Për shkak se UDP është një protokoll pa lidhje (connectionless), serveri implementon mekanizma shtesë për menaxhimin e klientëve, si kontrolli i timeout-it dhe largimi automatik i klientëve joaktivë.
 
+Sistemi mbështet disa komanda për manipulimin e file-ve, si listimi, leximi, kërkimi, shkarkimi, ngarkimi dhe fshirja e file-ve. Për të garantuar siguri dhe kontroll, është implementuar një sistem rolesh ku vetëm një klient mund të ketë rolin e administratorit (admin), ndërsa klientët e tjerë kanë rol normal me privilegje të kufizuara. Operacionet kritike si upload dhe delete janë të lejuara vetëm për adminin.
+
+Përveç funksionaliteteve bazë, sistemi përfshin edhe mekanizma për monitorimin e aktivitetit, si regjistrimi i mesazheve dhe statistikat mbi klientët aktivë. 
 ---
 
 ##  Teknologjitë e përdorura
