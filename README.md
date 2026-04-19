@@ -51,7 +51,7 @@ Sistemi përdor dy lloje përdoruesish:
 - Mund të përdorë: list, read, search, info
 
 ## Tabela e komandave
-
+```
   Komanda     Përshkrimi                Akses
 ------------------------------------------------
 list        Liston file-t             Vetëm Admin
@@ -62,7 +62,7 @@ delete      Fshin file                Vetëm admin
 download    Shkarkon file             Vetëm admin
 info        Informata                 Vetëm admin
 
-
+```
 ##  Si të ekzekutohet projekti
 
 ### Instalimi i dependencies
