@@ -13,9 +13,10 @@ module.exports = {
     try {
       const cmd = msg.command.toLowerCase();
 
-      if (!isAdmin && ["upload", "delete"].includes(cmd)) {
-        throw new Error("Leje e mohuar. Vetem admini ka qasje te plote");
+      if (!isAdmin && cmd !== "read") {
+        throw new Error("Vetem komanda read eshte e lejuar per user normal");
       }
+
       switch (cmd) {
         case "list":
           response.data = fileManager.listFiles();
