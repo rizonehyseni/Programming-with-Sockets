@@ -1,4 +1,4 @@
-const fileManager = require("./fileManager");
+const fileManager = require("./fileHandler");
 const clientManager = require("./clientManager");
 
 module.exports = {
